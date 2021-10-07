@@ -31,7 +31,7 @@ def market_page():
                 flash(f"Congrats! you have purchased {purchased_item_object.name} for {purchased_item_object.price}$", category="success")
             else:
                 flash(f"Unfortunately you don't have enough budget to buy {purchased_item_object.name}", category="danger")
-        #if sell_item_form.validate_on_submit():
+        #if sell_item_form.validate_on_submit(): //not required since it is alredy covered via POST
         sold_item = request.form.get('sold_item')
         sold_item_object = Item.query.filter_by(name=sold_item).first()
         if sold_item_object:
